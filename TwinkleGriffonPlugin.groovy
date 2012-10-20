@@ -19,11 +19,11 @@
  */
 class TwinkleGriffonPlugin {
     // the plugin version
-    String version = '0.1'
+    String version = '1.0.0'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '0.9.5 > *'
+    String griffonVersion = '1.0.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [swing: '0.9.5']
+    Map dependsOn = [swing: '1.0.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license
@@ -72,30 +72,30 @@ Refer to the Javadocs found in the plugin's distribution to learn more about Twi
 
 ### Example
 
-	import ch.swingfx.twinkle.window.Positions
+    import ch.swingfx.twinkle.window.Positions
 
-	application(title: 'Twinkle',
-	  preferredSize: [320, 240],
-	  pack: true,
-	  locationByPlatform:true,
-	  iconImage: imageIcon('/griffon-icon-48x48.png').image,
-	  iconImages: [imageIcon('/griffon-icon-48x48.png').image,
-	               imageIcon('/griffon-icon-32x32.png').image,
-	               imageIcon('/griffon-icon-16x16.png').image]) {
-	    gridLayout(cols: 3, rows: 3)
-	    [Positions.NORTH_WEST, Positions.NORTH,  Positions.NORTH_EAST,
-	     Positions.WEST,       Positions.CENTER, Positions.EAST,
-	     Positions.SOUTH_WEST, Positions.SOUTH,  Positions.SOUTH_EAST]. each { pos ->
-			button(pos.toString(), actionPerformed: { position, event ->
-				notification(
-				    title: 'Griffon + Twinkle',
-				    message: "Hello World ($position)",
-				    position: position,
-				    icon: imageIcon('/griffon-icon-48x48.png')
-				).show()
-			}.curry(pos))
-		}
-	}
+    application(title: 'Twinkle',
+      preferredSize: [320, 240],
+      pack: true,
+      locationByPlatform:true,
+      iconImage: imageIcon('/griffon-icon-48x48.png').image,
+      iconImages: [imageIcon('/griffon-icon-48x48.png').image,
+                   imageIcon('/griffon-icon-32x32.png').image,
+                   imageIcon('/griffon-icon-16x16.png').image]) {
+        gridLayout(cols: 3, rows: 3)
+        [Positions.NORTH_WEST, Positions.NORTH,  Positions.NORTH_EAST,
+         Positions.WEST,       Positions.CENTER, Positions.EAST,
+         Positions.SOUTH_WEST, Positions.SOUTH,  Positions.SOUTH_EAST]. each { pos ->
+            button(pos.toString(), actionPerformed: { position, event ->
+                notification(
+                    title: 'Griffon + Twinkle',
+                    message: "Hello World ($position)",
+                    position: position,
+                    icon: imageIcon('/griffon-icon-48x48.png')
+                ).show()
+            }.curry(pos))
+        }
+    }
 
 [1]: http://www.swingfx.ch/
 '''
